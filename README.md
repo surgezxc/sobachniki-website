@@ -60,7 +60,19 @@ vercel
 
 Root directory: `website`. Для Vercel не задавайте `NEXT_PUBLIC_BASE_PATH`.
 
-## Что настроить перед продакшеном
+## Скриншоты
+
+Все скриншоты в `public/screenshots/` обрезаны сверху (~4.5%) — убран системный статус-бар (время, зарядка).
+
+Добавить новый скрин:
+
+```bash
+# положить файл в public/screenshots/
+python3 scripts/crop-screenshots.py public/screenshots/новый-скрин.png
+# добавить запись в src/lib/constants.ts → SCREENSHOTS
+```
+
+На сайте скрины показываются в тёмной iPhone-рамке с Dynamic Island.
 
 - [ ] Заменить `SITE.url` и `SITE.contactEmail` в `src/lib/constants.ts`
 - [ ] Добавить реальные ссылки App Store / Google Play в `STORE_LINKS` (`src/lib/constants.ts`)

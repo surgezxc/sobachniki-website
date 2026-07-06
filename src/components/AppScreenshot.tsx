@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { assetPath } from "@/lib/assetPath";
 import { SCREENSHOT_HEIGHT, SCREENSHOT_WIDTH } from "@/lib/constants";
+import { PhoneFrame } from "./PhoneFrame";
 
 interface AppScreenshotProps {
   src: string;
@@ -19,7 +20,7 @@ export function AppScreenshot({
 }: AppScreenshotProps) {
   return (
     <figure className={className}>
-      <div className="overflow-hidden rounded-[var(--radius-card)] border border-divider bg-elevated shadow-[var(--shadow-card)]">
+      <PhoneFrame variant="gallery">
         <Image
           src={assetPath(src)}
           alt={alt}
@@ -28,9 +29,9 @@ export function AppScreenshot({
           priority={priority}
           className="h-auto w-full object-cover object-top"
         />
-      </div>
+      </PhoneFrame>
       {caption && (
-        <figcaption className="mt-2 text-center text-xs text-text-secondary">
+        <figcaption className="mt-3 text-center text-xs text-text-secondary">
           {caption}
         </figcaption>
       )}
