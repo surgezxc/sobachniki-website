@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+
+  --color-accent: #c75b39;
+  --color-accent-hover: #b04f32;
+  --color-surface: #f8f1e6;
+  --color-card: #ffffff;
+  --color-text: #2e2823;
+  --color-text-secondary: #8c8073;
+  --color-divider: #ede3d2;
+  --color-elevated: #f1e8d8;
+
+  --color-nutrition-bg: #f5e7c8;
+  --color-nutrition-icon: #a87c24;
+  --color-tasks-bg: #f8e0cc;
+  --color-tasks-icon: #b4592f;
+  --color-weight-bg: #e4ead3;
+  --color-weight-icon: #5f7040;
+  --color-medical-bg: #efdfd2;
+  --color-medical-icon: #8a5a3b;
+  --color-default-bg: #f1e8d8;
+  --color-default-icon: #c75b39;
+
+  --radius-card: 20px;
+  --radius-pill: 24px;
+
+  --shadow-card: 0 4px 16px rgb(46 40 35 / 0.06);
+  --shadow-card-hover: 0 8px 24px rgb(46 40 35 / 0.1);
+}
+
+:root {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-surface: #1f1a15;
+  --color-card: #2b241d;
+  --color-text: #f4ede2;
+  --color-text-secondary: #a5988a;
+  --color-divider: #3c342a;
+  --color-elevated: #362e25;
+
+  --color-nutrition-bg: rgb(245 231 200 / 0.15);
+  --color-nutrition-icon: #e7c98f;
+  --color-tasks-bg: rgb(248 224 204 / 0.15);
+  --color-tasks-icon: #f0b894;
+  --color-weight-bg: rgb(228 234 211 / 0.15);
+  --color-weight-icon: #c3d0a0;
+  --color-medical-bg: rgb(239 223 210 / 0.15);
+  --color-medical-icon: #d9bfa8;
+  --color-default-bg: rgb(241 232 216 / 0.12);
+  --color-default-icon: #e08a6a;
+
+  --shadow-card: 0 4px 16px rgb(0 0 0 / 0.25);
+  --shadow-card-hover: 0 8px 24px rgb(0 0 0 / 0.35);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: rgb(199 91 57 / 0.25);
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-fade-in-up {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
