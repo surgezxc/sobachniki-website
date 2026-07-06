@@ -74,6 +74,8 @@ python3 scripts/crop-screenshots.py public/screenshots/новый-скрин.png
 
 На сайте скрины показываются в тёмной iPhone-рамке с Dynamic Island.
 
+## Что настроить перед продакшеном
+
 - [ ] Заменить `SITE.url` и `SITE.contactEmail` в `src/lib/constants.ts`
 - [ ] Добавить реальные ссылки App Store / Google Play в `STORE_LINKS` (`src/lib/constants.ts`)
 - [ ] Заменить placeholder-скриншоты на реальные изображения в `public/`

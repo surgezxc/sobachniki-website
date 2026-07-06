@@ -18,26 +18,31 @@ export function Screenshots() {
         </FadeIn>
 
         <FadeIn delay={100}>
-          <div
-            className="mt-10 flex justify-center gap-4 overflow-x-auto pb-4 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:grid sm:max-w-3xl sm:grid-cols-2 sm:gap-6 sm:overflow-visible sm:mx-auto lg:max-w-4xl"
-            role="list"
-            aria-label="Галерея скриншотов приложения"
-          >
-            {SCREENSHOTS.map((shot, index) => (
-              <div
-                key={shot.src}
-                role="listitem"
-                className="w-[220px] shrink-0 snap-center sm:w-[240px]"
-              >
-                <AppScreenshot
-                  src={shot.src}
-                  alt={shot.alt}
-                  caption={shot.caption}
-                  priority={index === 0}
-                  className="transition-transform duration-300 hover:scale-[1.02]"
-                />
-              </div>
-            ))}
+          <div className="relative mt-10">
+            <div
+              className="flex flex-nowrap items-start justify-start gap-5 overflow-x-auto scroll-smooth pb-4 pl-1 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:justify-center md:gap-6"
+              role="list"
+              aria-label="Галерея скриншотов приложения"
+            >
+              {SCREENSHOTS.map((shot, index) => (
+                <div
+                  key={shot.src}
+                  role="listitem"
+                  className="w-[200px] shrink-0 snap-center sm:w-[220px]"
+                >
+                  <AppScreenshot
+                    src={shot.src}
+                    alt={shot.alt}
+                    caption={shot.caption}
+                    priority={index === 0}
+                    className="transition-transform duration-300 hover:scale-[1.02]"
+                  />
+                </div>
+              ))}
+            </div>
+            <p className="mt-2 text-center text-xs text-text-secondary md:hidden">
+              Листайте влево и вправо
+            </p>
           </div>
         </FadeIn>
       </div>

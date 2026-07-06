@@ -8,21 +8,6 @@ interface PhoneFrameProps {
   variant?: PhoneFrameVariant;
 }
 
-function DynamicIsland({ variant }: { variant: PhoneFrameVariant }) {
-  const isHero = variant === "hero";
-
-  return (
-    <div
-      className={`pointer-events-none absolute left-1/2 z-10 -translate-x-1/2 rounded-full bg-black shadow-[inset_0_0_0_1px_rgba(255,255,255,0.07),0_1px_3px_rgba(0,0,0,0.5)] ${
-        isHero
-          ? "top-[10px] h-[24px] w-[96px]"
-          : "top-[7px] h-[18px] w-[72px]"
-      }`}
-      aria-hidden="true"
-    />
-  );
-}
-
 export function PhoneFrame({
   children,
   className = "",
@@ -45,12 +30,11 @@ export function PhoneFrame({
         }`}
       >
         <div
-          className={`relative overflow-hidden bg-[#0f0d0b] ${
+          className={`overflow-hidden bg-[#0f0d0b] ${
             isHero ? "rounded-[32px]" : "rounded-[26px]"
           }`}
         >
           {children}
-          <DynamicIsland variant={variant} />
         </div>
       </div>
     </div>

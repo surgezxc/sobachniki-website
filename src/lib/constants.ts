@@ -166,5 +166,5 @@ export const SCREENSHOTS = [
 ] as const;
 
 /** Высота скриншота после обрезки системного статус-бара (px). */
-export const SCREENSHOT_HEIGHT = 978;
+export const SCREENSHOT_HEIGHT = 972;
 export const SCREENSHOT_WIDTH = 449;

@@ -8,13 +8,13 @@ from pathlib import Path
 
 from PIL import Image
 
-CROP_RATIO = 0.045  # ~46 px при высоте 1024
+CROP_PX = 52  # системный статус-бар Android
 
 
 def crop_status_bar(src: Path, dst: Path | None = None) -> None:
     im = Image.open(src)
     w, h = im.size
-    crop = int(h * CROP_RATIO)
+    crop = CROP_PX if h >= 1000 else int(h * 0.045)
     cropped = im.crop((0, crop, w, h))
     cropped.save(dst or src, quality=92)
     print(f"{src.name}: {w}x{h} -> {w}x{h - crop} (crop {crop}px)")
