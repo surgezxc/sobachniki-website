@@ -19,7 +19,7 @@ export function Screenshots() {
 
         <FadeIn delay={100}>
           <div
-            className="mt-10 flex justify-center gap-4 overflow-x-auto pb-4 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:gap-6"
+            className="mt-10 flex justify-center gap-4 overflow-x-auto pb-4 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:grid sm:max-w-xl sm:grid-cols-2 sm:gap-6 sm:overflow-visible sm:mx-auto lg:max-w-2xl"
             role="list"
             aria-label="Галерея скриншотов приложения"
           >

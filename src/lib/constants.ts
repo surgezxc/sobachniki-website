@@ -148,4 +148,9 @@ export const SCREENSHOTS = [
     alt: "Скорая ветпомощь: ближайшие клиники, звонок и маршрут",
     caption: "Скорая ветпомощь",
   },
+  {
+    src: "/screenshots/nutrition-barf.png",
+    alt: "Питание: суточная норма, баланс BARF и учёт порций",
+    caption: "Питание и BARF",
+  },
 ] as const;
