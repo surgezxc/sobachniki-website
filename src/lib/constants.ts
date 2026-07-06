@@ -153,4 +153,18 @@ export const SCREENSHOTS = [
     alt: "Питание: суточная норма, баланс BARF и учёт порций",
     caption: "Питание и BARF",
   },
+  {
+    src: "/screenshots/nearby-map.png",
+    alt: "Карта полезных мест: ветклиники, зоомагазины, площадки",
+    caption: "Полезное рядом",
+  },
+  {
+    src: "/screenshots/nearby-place.png",
+    alt: "Детали места на карте с построением маршрута",
+    caption: "Маршрут до места",
+  },
 ] as const;
+
+/** Высота скриншота после обрезки системного статус-бара (px). */
+export const SCREENSHOT_HEIGHT = 978;
+export const SCREENSHOT_WIDTH = 449;

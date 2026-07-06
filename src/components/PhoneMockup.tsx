@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { assetPath } from "@/lib/assetPath";
+import { SCREENSHOT_HEIGHT, SCREENSHOT_WIDTH } from "@/lib/constants";
 
 const HERO_SCREENSHOT = assetPath("/screenshots/emergency-vet.png");
 
@@ -15,12 +16,12 @@ export function PhoneMockup() {
           >
             <div className="h-1 w-16 rounded-full bg-text/15" />
           </div>
-          <div className="aspect-[449/1024] overflow-hidden bg-surface-dark">
+          <div className="aspect-[449/978] overflow-hidden bg-surface-dark">
             <Image
               src={HERO_SCREENSHOT}
               alt="Экран приложения Собачники: скорая ветпомощь и ближайшие клиники"
-              width={449}
-              height={1024}
+              width={SCREENSHOT_WIDTH}
+              height={SCREENSHOT_HEIGHT}
               priority
               className="h-full w-full object-cover object-top"
             />

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { assetPath } from "@/lib/assetPath";
+import { SCREENSHOT_HEIGHT, SCREENSHOT_WIDTH } from "@/lib/constants";
 
 interface AppScreenshotProps {
   src: string;
@@ -22,8 +23,8 @@ export function AppScreenshot({
         <Image
           src={assetPath(src)}
           alt={alt}
-          width={449}
-          height={1024}
+          width={SCREENSHOT_WIDTH}
+          height={SCREENSHOT_HEIGHT}
           priority={priority}
           className="h-auto w-full object-cover object-top"
         />
