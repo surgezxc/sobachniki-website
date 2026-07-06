@@ -1,6 +1,7 @@
 import Image from "next/image";
+import { assetPath } from "@/lib/assetPath";
 
-const HERO_SCREENSHOT = "/screenshots/emergency-vet.png";
+const HERO_SCREENSHOT = assetPath("/screenshots/emergency-vet.png");
 
 export function PhoneMockup() {
   return (

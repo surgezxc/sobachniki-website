@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { assetPath } from "@/lib/assetPath";
 
 interface AppScreenshotProps {
   src: string;
@@ -19,7 +20,7 @@ export function AppScreenshot({
     <figure className={className}>
       <div className="overflow-hidden rounded-[var(--radius-card)] border border-divider bg-elevated shadow-[var(--shadow-card)]">
         <Image
-          src={src}
+          src={assetPath(src)}
           alt={alt}
           width={449}
           height={1024}
