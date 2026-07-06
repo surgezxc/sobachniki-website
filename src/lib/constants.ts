@@ -142,4 +142,10 @@ export const FAQ_ITEMS = [
   },
 ] as const;
 
-export const SCREENSHOT_COUNT = 5;
+export const SCREENSHOTS = [
+  {
+    src: "/screenshots/emergency-vet.png",
+    alt: "Скорая ветпомощь: ближайшие клиники, звонок и маршрут",
+    caption: "Скорая ветпомощь",
+  },
+] as const;

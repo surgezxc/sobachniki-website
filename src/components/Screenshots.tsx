@@ -1,4 +1,5 @@
-import { SCREENSHOT_COUNT } from "@/lib/constants";
+import { SCREENSHOTS } from "@/lib/constants";
+import { AppScreenshot } from "./AppScreenshot";
 import { FadeIn } from "./FadeIn";
 
 export function Screenshots() {
@@ -18,28 +19,23 @@ export function Screenshots() {
 
         <FadeIn delay={100}>
           <div
-            className="mt-10 flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:grid sm:grid-cols-3 sm:overflow-visible lg:grid-cols-5"
+            className="mt-10 flex justify-center gap-4 overflow-x-auto pb-4 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:gap-6"
             role="list"
             aria-label="Галерея скриншотов приложения"
           >
-            {Array.from({ length: SCREENSHOT_COUNT }, (_, i) => (
+            {SCREENSHOTS.map((shot, index) => (
               <div
-                key={i}
+                key={shot.src}
                 role="listitem"
-                className="w-[200px] shrink-0 snap-center sm:w-auto"
+                className="w-[220px] shrink-0 snap-center sm:w-[240px]"
               >
-                <div
-                  className="flex aspect-[9/19] flex-col items-center justify-center rounded-[var(--radius-card)] border border-divider bg-elevated shadow-[var(--shadow-card)] transition-transform duration-300 hover:scale-[1.02]"
-                  role="img"
-                  aria-label={`Скриншот приложения ${i + 1}`}
-                >
-                  <span className="text-3xl opacity-40" aria-hidden="true">
-                    📱
-                  </span>
-                  <p className="mt-3 px-4 text-center text-xs text-text-secondary">
-                    Скриншот приложения
-                  </p>
-                </div>
+                <AppScreenshot
+                  src={shot.src}
+                  alt={shot.alt}
+                  caption={shot.caption}
+                  priority={index === 0}
+                  className="transition-transform duration-300 hover:scale-[1.02]"
+                />
               </div>
             ))}
           </div>
